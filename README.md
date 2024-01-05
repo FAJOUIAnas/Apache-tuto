@@ -8,6 +8,8 @@
 
 ## Ajouter index.html
 
+`/var/www/html`
+
 ```html
 <html>
   <head>
@@ -55,4 +57,17 @@ phpinfo();
 <Location /server-info>
     SetHandler server-info
 </Location>
+```
+
+## Virtual Hosts
+
+utilisation du */etc/hosts*
+
+httpd.conf :
+```
+<VirtualHost *:80>
+    DocumentRoot "/var/www/exemple1"
+    ServerName exemple1
+
+</VirtualHost>
 ```
