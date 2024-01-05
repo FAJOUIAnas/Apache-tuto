@@ -43,10 +43,14 @@
 
 ```
 <Directory /var/www/html>
-	Order allow,deny
+	Order allow, deny
  	Allow from all
 </Directory>
 ```
+
+Verifier la syntax :
+
+`apachectl configtest`
 
 ## Les modules
 
