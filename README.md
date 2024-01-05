@@ -8,6 +8,10 @@
 
 *http://localhost/*
 
+## Manuel
+
+`sudo dnf install httpd-manual`
+
 ## user et groupe
 
 `grep apache /etc/group`
