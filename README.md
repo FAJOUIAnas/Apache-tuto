@@ -6,6 +6,22 @@
 
 `systemctl enable httpd`
 
+*http://localhost/*
+
+## user et groupe
+
+`grep apache /etc/group`
+
+`grep apache /etc/passwd`
+
+`grep apache /etc/shadow`
+
+## Lancer Apache
+
+`systemctl start httpd`
+
+`/etc/rc.d/init.d/httpd start`
+
 ## Ajouter index.html
 
 `/var/www/html`
