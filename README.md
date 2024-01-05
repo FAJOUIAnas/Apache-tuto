@@ -97,23 +97,25 @@ httpd.conf :
 ```
 ## HTTPS
 
-`mod_ssl`
+`ssl_module`
+
+Generer la certif :
+
+`sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt`
 
 ```
 <VirtualHost *:80>
-    ServerName mondomaine.com
-    Redirect permanent / https://mondomaine.com/
+    ServerName exemple
+    Redirect / https://exemple/
 </VirtualHost>
 
+
 <VirtualHost *:443>
-    ServerName yourdomain.com
-    # SSL Configuration goes here
+   ServerName exemple
+   DocumentRoot /var/www/exemple
 
-    # Other SSL configurations like certificates, keys, etc.
-
-    DocumentRoot /var/www/html   # Adjust this to your actual document root
-
-    # Other configurations for your site
-
+   SSLEngine on
+   SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
+   SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
 </VirtualHost>
 ```
