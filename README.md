@@ -91,3 +91,25 @@ httpd.conf :
 
 </VirtualHost>
 ```
+## HTTPS
+
+`mod_ssl`
+
+```
+<VirtualHost *:80>
+    ServerName mondomaine.com
+    Redirect permanent / https://mondomaine.com/
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerName yourdomain.com
+    # SSL Configuration goes here
+
+    # Other SSL configurations like certificates, keys, etc.
+
+    DocumentRoot /var/www/html   # Adjust this to your actual document root
+
+    # Other configurations for your site
+
+</VirtualHost>
+```
